@@ -1,0 +1,20 @@
+#!/bin/sh
+sum=0
+if [ $# -eq 0 ]
+then
+	echo "Usage: sum <number> [<number>...]"
+	exit 1
+fi
+for a in $*
+do
+	case $a in
+		[0-9]*) ;;
+		-h) echo "Enter sum followed by numeric digits to output the sum"; exit 1;;
+		--help) echo "Enter sum followed by numeric digits to output the sum"; exit 1;;
+		*) echo "Arguments must be numbers.">&2; exit 1;;
+		
+	esac
+	sum=$(expr $sum + $a)
+done
+echo "$sum"
+exit 0

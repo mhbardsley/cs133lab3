@@ -1,0 +1,6 @@
+#!/bin/bash
+javac Loop.java
+java Loop &
+sleep 5
+pkill java
+exit 0

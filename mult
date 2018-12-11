@@ -1,0 +1,5 @@
+#!/bin/bash
+mult=0
+mult=$(expr $1 "*" $2)
+echo "The product is $mult"
+exit 0

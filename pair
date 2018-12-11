@@ -1,0 +1,14 @@
+#!/bin/sh
+c=0
+sum=0
+for a in $*
+do
+	c=$((c + 1))
+	sum=$(expr $sum + $a)
+	if [ $(expr $c % 2) -eq 0 ]
+	then
+		echo "$sum "
+		sum=0
+	fi
+done
+exit 0
